@@ -4,37 +4,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zakarya Site</title>
+<title>موقعي الاحترافي</title>
 
 <style>
-
 body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-color:white;
-text-align:center;
-overflow:hidden;
+    margin:0;
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
 }
 
 .box{
-background:#1e293b;
-padding:40px;
-border-radius:25px;
-width:90%;
-max-width:400px;
-box-shadow:0 0 30px rgba(0,0,0,0.5);
-animation:fade 1s ease;
+    background:#1e293b;
+    padding:30px;
+    border-radius:25px;
+    width:85%;
+    max-width:350px;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
 
 img{
-width:120px;
-border-radius:50%;
-margin-bottom:20px;
+    width:100px;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+h1{
+    margin:10px 0;
+}
+
+p{
+    color:#cbd5e1;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:12px;
+    background:#38bdf8;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+<h1>🚀 موقعي الاحترافي</h1>
+
+<p>
+أول موقع ديالي فيه أزرار وصور وأنيميشن
+</p>
+
+<button onclick="goGoogle()">
+Google
+</button>
+
+<br>
+
+<button onclick="goYoutube()">
+YouTube
+</button>
+
+<br>
+
+<button onclick="showMsg()">
+Message
+</button>
+
+</div>
+
+<script>
+
+function goGoogle(){
+    window.location.href="https://google.com";
+}
+
+function goYoutube(){
+    window.location.href="https://youtube.com";
+}
+
+function showMsg(){
+    alert("🔥 خدام 100%");
+}
+
+</script>
+
+</body>
+</html>margin-bottom:20px;
 animation:pulse 2s infinite;
 }
 
