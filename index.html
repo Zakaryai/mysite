@@ -1,14 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zakarya Site</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0f172a;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+.box{
+background:#1e293b;
+padding:40px;
+border-radius:25px;
+width:90%;
+max-width:400px;
+box-shadow:0 0 30px rgba(0,0,0,0.5);
+animation:fade 1s ease;
+}
+
+img{
+width:120px;
+border-radius:50%;
+margin-bottom:20px;
+animation:pulse 2s infinite;
+}
+
+h1{
+color:#38bdf8;
+font-size:32px;
+margin-bottom:10px;
+}
+
+p{
+color:#cbd5e1;
+font-size:18px;
+}
+
+button{
+margin-top:15px;
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+background:#38bdf8;
+color:black;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:white;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
 <body>
 
 <div class="box">
 
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-width="120">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
 
-<h1>🚀 موقعي الاحترافي</h1>
+<h1>🚀 مرحبا بك</h1>
 
 <p>
-أول موقع ديالي فيه أزرار وصور وأنيميشن
+موقع احترافي معمول ب GitHub Pages
 </p>
 
 <button onclick="goGoogle()">
@@ -17,6 +106,10 @@ Google
 
 <button onclick="goYoutube()">
 YouTube
+</button>
+
+<button onclick="goFacebook()">
+Facebook
 </button>
 
 <button onclick="showMsg()">
@@ -35,6 +128,18 @@ function goYoutube(){
 window.location.href="https://youtube.com";
 }
 
+function goFacebook(){
+window.location.href="https://facebook.com";
+}
+
+function showMsg(){
+alert("🔥 الموقع خدام بنجاح");
+}
+
+</script>
+
+</body>
+</html>
 function showMsg(){
 alert("🔥 خدام 100%");
 }
