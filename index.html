@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpha Link Hub</title>
 
-<title>موقعي الاحترافي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -12,27 +15,55 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:'Cairo',sans-serif;
 }
 
 body{
-background:#0f172a;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
-padding:20px;
+background:#020617;
+overflow:hidden;
 color:white;
 }
 
+body::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:#00f0ff;
+filter:blur(180px);
+opacity:.15;
+top:-120px;
+right:-120px;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:#7c3aed;
+filter:blur(180px);
+opacity:.15;
+bottom:-100px;
+left:-100px;
+}
+
 .card{
-width:100%;
-max-width:380px;
-background:#1e293b;
-padding:30px;
-border-radius:25px;
+position:relative;
+z-index:2;
+width:92%;
+max-width:420px;
+background:rgba(15,23,42,.7);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+border-radius:30px;
+padding:35px 25px;
 text-align:center;
-box-shadow:0 0 30px rgba(0,0,0,0.5);
+box-shadow:0 0 40px rgba(0,0,0,.5);
 animation:fade 1s ease;
 }
 
@@ -41,6 +72,7 @@ from{
 opacity:0;
 transform:translateY(30px);
 }
+
 to{
 opacity:1;
 transform:translateY(0);
@@ -51,68 +83,105 @@ transform:translateY(0);
 width:120px;
 height:120px;
 border-radius:50%;
-border:4px solid #38bdf8;
-margin-bottom:20px;
 object-fit:cover;
+border:4px solid #00e5ff;
+box-shadow:0 0 25px #00e5ff;
+margin-bottom:18px;
 }
 
 h1{
-font-size:32px;
-margin-bottom:10px;
-color:#38bdf8;
+font-size:34px;
+font-weight:900;
+margin-bottom:8px;
+background:linear-gradient(90deg,#38bdf8,#a855f7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-p{
-margin-bottom:25px;
+.bio{
 color:#cbd5e1;
-line-height:1.7;
+font-size:15px;
+line-height:1.8;
+margin-bottom:28px;
 }
 
-button{
+.btn{
 width:100%;
-padding:15px;
+padding:16px;
 margin:10px 0;
 border:none;
-border-radius:15px;
-font-size:18px;
-font-weight:bold;
+border-radius:18px;
+font-size:17px;
+font-weight:700;
 cursor:pointer;
-transition:0.3s;
+transition:.25s;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
 }
 
-button:hover{
-transform:scale(1.03);
-}
-
-.google{
-background:#ffffff;
-color:black;
+.btn:hover{
+transform:translateY(-3px) scale(1.02);
 }
 
 .youtube{
 background:#ff0000;
 color:white;
+box-shadow:0 0 20px rgba(255,0,0,.35);
 }
 
-.facebook{
-background:#1877f2;
+.github{
+background:#111827;
 color:white;
+box-shadow:0 0 20px rgba(255,255,255,.1);
 }
 
 .telegram{
 background:#229ED9;
 color:white;
+box-shadow:0 0 20px rgba(34,158,217,.35);
+}
+
+.discord{
+background:#5865F2;
+color:white;
+box-shadow:0 0 20px rgba(88,101,242,.35);
 }
 
 .message{
-background:#38bdf8;
+background:#22c55e;
 color:black;
 }
 
-.footer{
-margin-top:20px;
-font-size:14px;
+.stats{
+display:flex;
+justify-content:space-between;
+gap:10px;
+margin-top:22px;
+}
+
+.box{
+flex:1;
+background:rgba(255,255,255,.05);
+padding:14px;
+border-radius:16px;
+}
+
+.box h2{
+font-size:20px;
+color:#38bdf8;
+}
+
+.box span{
+font-size:13px;
 color:#94a3b8;
+}
+
+.footer{
+margin-top:24px;
+font-size:13px;
+color:#64748b;
 }
 
 </style>
@@ -124,59 +193,76 @@ color:#94a3b8;
 
 <img class="avatar" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
 
-<h1>🚀 مرحبا</h1>
+<h1>⚡ Alpha</h1>
 
-<p>
-موقع احترافي معمول بـ HTML CSS JavaScript  
-يمكنك إضافة روابطك الخاصة بسهولة
+<p class="bio">
+موقع شخصي احترافي بروابط السوشيال ميديا
+بتصميم عصري وتأثيرات احترافية.
 </p>
 
-<button class="google" onclick="goGoogle()">
-Google
+<button class="btn youtube" onclick="goYoutube()">
+▶ YouTube
 </button>
 
-<button class="youtube" onclick="goYoutube()">
-YouTube
+<button class="btn github" onclick="goGithub()">
+💻 GitHub
 </button>
 
-<button class="facebook" onclick="goFacebook()">
-Facebook
+<button class="btn telegram" onclick="goTelegram()">
+✈ Telegram
 </button>
 
-<button class="telegram" onclick="goTelegram()">
-Telegram
+<button class="btn discord" onclick="goDiscord()">
+🎮 Discord
 </button>
 
-<button class="message" onclick="showMsg()">
-Message
+<button class="btn message" onclick="showMsg()">
+🔥 Message
 </button>
+
+<div class="stats">
+<div class="box">
+<h2>26K</h2>
+<span>Followers</span>
+</div>
+
+<div class="box">
+<h2>120+</h2>
+<span>Projects</span>
+</div>
+
+<div class="box">
+<h2>5★</h2>
+<span>Rating</span>
+</div>
+</div>
 
 <div class="footer">
-© 2026 My Professional Website
+© 2026 Alpha Professional Page
 </div>
 
 </div>
 
 <script>
 
-function goGoogle(){
-window.location.href="https://google.com";
-}
-
 function goYoutube(){
 window.location.href="https://youtube.com/@7m7-c2";
 }
 
-function goFacebook(){
-window.location.href="https://facebook.com";
+function goGithub(){
+window.location.href="https://github.com";
 }
 
 function goTelegram(){
-window.location.href="https://t.me/";
+window.location.href="https://t.me";
+}
+
+function goDiscord(){
+window.location.href="https://discord.com";
 }
 
 function showMsg(){
-alert("🔥 الموقع خدام بشكل احترافي");
+alert("🔥 Welcome To Alpha Website");
 }
 
 </script>
